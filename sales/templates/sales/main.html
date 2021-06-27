@@ -3,8 +3,13 @@
 {% block content %}
 sales list <br>
 {% for obj in object_list %}
-<a href="{{obj.get_absolute_url}}">
-  {{obj.transaction_id}} <br>
-</a>
+<div class="card mb-3">
+  {% comment %} <a href="{{obj.get_absolute_url}}"> {% endcomment %}
+
+    <a href="{{obj.get_absolute_url}}" class="card-body">
+      {% comment %} <a href="{% url 'sales:detail' obj.pk %}" class="card-body"> {% endcomment %}
+        {{obj.transaction_id}} <br>
+      </a>
+</div>
 {% endfor %}
 {% endblock content %}

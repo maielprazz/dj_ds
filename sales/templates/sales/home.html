@@ -1,3 +1,20 @@
 {% extends 'base.html' %}
-{% block title %} Rumah {% endblock title %}
-{% block content%} {{h}} {% endblock content%}
+{% load crispy_forms_tags %}
+{% block title %} Home {% endblock title %}
+{% block content%}
+
+<hr>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{form | crispy}}
+  <button type="submit" class="btn btn-primary mt-3">Search</button>
+</form>
+<br>
+{% if sales_df %}
+{{sales_df|safe}}
+{% else %}
+
+<h3>No Data...</h3>
+{% endif %}
+
+{% endblock content%}
