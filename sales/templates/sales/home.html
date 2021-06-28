@@ -11,10 +11,17 @@
 </form>
 <br>
 {% if sales_df %}
+sales df
 {{sales_df|safe}}
+<br>
+position df
+{{positions_df|safe}}
+<br>
+merged df
+{{merged_df|safe}}
 {% else %}
 
-<h3>No Data...</h3>
+<h3>No Data</h3>
 {% endif %}
 
 {% endblock content%}
